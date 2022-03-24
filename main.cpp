@@ -3,31 +3,14 @@
 using namespace std;
 
 #include "Input_Validation_Extended.h"
-
-void velocityFunct(){
-  cout << "velocity" << endl;
-}
-void motionFunct(){
-  cout << "motion" << endl;
-}
-void accelerationFunct(){
-  cout << "acceleration" << endl;
-}
-void newtonFunct(){
-  cout << "newton" << endl;
-}
-void weightFunct(){
-  cout << "weight" << endl;
-}
-void momentumFunct(){
-  cout << "momentum" << endl;
-}
+#include "functions.h"
 
 int main() {
   cout << "MENU" << endl;
   char input;
   
   while (1) {
+    cout << endl;
     cout << "1. Velocity"<< endl;
     cout << "2. Motion"<< endl;
     cout << "3. Acceleration"<< endl;
@@ -63,21 +46,3 @@ int main() {
   }
   }
 
-void velocityFunct2(){
-  double ds;
-  double dt;
-  string dsUnits;
-  string dtUnits;
-  cout << "please enter the change in speed: " << endl;
-  cin >> ds;
-  cout << "enter the units used to measue speed (ex:miles): ";
-  cin >> dsUnits;
-  cout << "Please enter the change in time: " << endl;
-  cin >> dt;
-  cout << "enter the units used to measue time (ex:seconds): ";
-  cin >> dtUnits;
-  double velocity = ds / dt;
-  
-  cout <<"the velocity is " << velocity << dsUnits << "/" << dtUnits;
-  
-}
