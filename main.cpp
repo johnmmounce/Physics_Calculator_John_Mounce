@@ -2,6 +2,8 @@
 #include <string>
 using namespace std;
 
+#include "Input_Validation_Extended.h"
+
 void velocityFunct(){
   cout << "velocity" << endl;
 }
@@ -26,34 +28,38 @@ int main() {
   char input;
   
   while (1) {
-    cout << "V. Velocity"<< endl;
-    cout << "M. Motion"<< endl;
-    cout << "A. Acceleration"<< endl;
-    cout << "W. Weight"<< endl;
-    cout << "F. Momentum"<< endl;
+    cout << "1. Velocity"<< endl;
+    cout << "2. Motion"<< endl;
+    cout << "3. Acceleration"<< endl;
+    cout << "4. Newton"<< endl;
+    cout << "5. Weight"<< endl;
+    cout << "6. Momentum"<< endl;
     cout << "enter 'E' or 'e' to exit." << endl;
-    cin >> input;
-    if (input == 'V' || input == 'v'){
+    validateChar(input);
+    if (input == '1'){
       velocityFunct();
     }
-    else if (input == 'A' || input == 'a'){
+    else if (input == '2' ){
       accelerationFunct();
     }
-    else if (input == 'M' || input == 'm'){
+    else if (input == '3'){
       motionFunct();
     }
-    else if (input == 'N' || input == 'n'){
+    else if (input == '4'){
       newtonFunct();
     }
-    else if (input == 'W' || input == 'w'){
+    else if (input == '5'){
       weightFunct();
     }
-    else if (input == 'F' || input == 'f'){
+    else if (input == '6'){
       momentumFunct();
     }
     else if (input == 'E' || input == 'e'){
       break;
     }    
+    else {
+      cerr << "invalid input" << endl;
+    }
   }
   }
 
