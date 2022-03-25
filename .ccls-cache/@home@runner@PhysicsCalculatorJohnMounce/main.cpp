@@ -12,13 +12,13 @@ int main() {
   while (1) {
     cout << endl;
     cout << "1. Velocity"<< endl;
-    cout << "2. Motion"<< endl;
-    cout << "3. Acceleration"<< endl;
-    cout << "4. Newton"<< endl;
+    cout << "2. Acceleration"<< endl;
+    cout << "3. Motion"<< endl;
+    cout << "4. Newton's 2nd law (force)"<< endl;
     cout << "5. Weight"<< endl;
     cout << "6. Momentum"<< endl;
     cout << "enter 'E' or 'e' to exit." << endl;
-    validateChar(input);
+    input = validateChar(input);
     if (input == '1'){
       velocityFunct();
     }
