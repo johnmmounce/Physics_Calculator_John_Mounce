@@ -3,6 +3,8 @@
 #include <iomanip>
 using namespace std;
 
+  string color = "\x1b[" + to_string(32) + ";1m";
+  string reset = "\x1b[0m";
 
 void velocityFunct(){
   double ds;
@@ -19,9 +21,10 @@ void velocityFunct(){
   dtUnits = validateString(dtUnits);
   double velocity = ds / dt;
   
-  cout <<"the velocity is "
+  cout << color << "the velocity is "
     << fixed << setprecision(4)<< velocity << " " 
-    << dsUnits << "/" << dtUnits << endl;
+    << dsUnits << "/" << dtUnits << reset << endl;
+  
 }
 
 void accelerationFunct(){
@@ -31,15 +34,15 @@ void accelerationFunct(){
   string adtUnits;
   cout << "please enter the change in velocity: " << endl;
   dv = validateDouble(dv);
-  cout << "enter the units used to measue velocity (ex:miles): ";
+  cout << "enter the units used to measure velocity (ex:miles): ";
   dvUnits = validateString(dvUnits);
   cout << "Please enter the change in time: " << endl;
   adt = validateDouble(adt);
-  cout << "enter the units used to measue time (ex:seconds): ";
+  cout << "enter the units used to measure time (ex:seconds): ";
   adtUnits = validateString(adtUnits);
   double acceleration = dv / adt;
   
-  cout <<"the acceleration is " << fixed << setprecision(4)<< acceleration << " " << dvUnits << "/" << adtUnits << endl;
+  cout <<"the acceleration is " << fixed << setprecision(4)<< color << acceleration << " " << dvUnits << "/" << adtUnits << reset<< endl;
 }
 
 void motionFunct(){
@@ -61,7 +64,7 @@ void motionFunct(){
       cout << "\nplease enter a value for variable 'at': ";
         at = validateDouble(at);
       Ma = vSub + at;
-      cout << "v = " << fixed << setprecision(4)<< Ma;
+      cout << "v = " << fixed << setprecision(4)<< color << Ma << reset;
       
     }
     else if (input == 'B' && input== 'b'){
@@ -76,7 +79,7 @@ void motionFunct(){
       cout << "\nplease enter value for variable 'at': ";
       atSq = validateDouble(atSq);
       atSq = atSq *atSq;
-      cout << "\n s = " << fixed << setprecision(4)<< Ms;
+      cout << "\n s = " << fixed << setprecision(4)<< color << Ms << reset;
     }
     else if (input == 'C' && input== 'c'){
       double vSubSq;
@@ -92,7 +95,7 @@ void motionFunct(){
       cout << "\nplease enter a value for s sub 0: ";
       sSub = validateDouble(sSub);
       double Mv2 = vSubSq + (2*a*(s-sSub));
-      cout << "\n v^2 = " << fixed << setprecision(4)<< Mv2;
+      cout << "\n v^2 = " << fixed << setprecision(4)<< color<< Mv2 << reset;
       
     }
     else if (input == 'D' && input== 'd'){
@@ -103,7 +106,7 @@ void motionFunct(){
       cout << "\nplease enter a value for v sub 0";
       vSub = validateDouble(vSub);
       double Mv = .5*(v +vSub);
-      cout << "\nv_bar = " << Mv;
+      cout << "\nv_bar = " << fixed << setprecision(4) <<color <<Mv << reset;
     }
     else if (input == 'E' || input == 'e'){
       break;
@@ -122,7 +125,7 @@ void newtonFunct(){
   m = validateDouble(m);
   cout << "\nplease enter the acceleration (in m/s^2): ";
   a = validateDouble(a);
-  cout << "\nAccording to newtons 2nd law, the force of the moving object is = " << force;
+  cout << "\nAccording to newtons 2nd law, the force of the moving object is = " << fixed << setprecision(4)<< color<< force << reset;
 }
 void weightFunct(){
   double mass;
@@ -135,7 +138,7 @@ void weightFunct(){
   cout << "\nplease enter the units used for mass: " ;
   massUnits = validateString(massUnits);
   cout << "\ngravity on earth is " << gravity << gravityUnits;
-  cout << "\nwith weight= m * g. This would make weight = " << weight << " " << massUnits << "*" << gravityUnits;
+  cout << "\nwith weight= m * g. This would make weight = " <<color<< weight << " " << massUnits << "*" << fixed << setprecision(4)<< gravityUnits << reset;
   
 }
 void momentumFunct(){
@@ -146,5 +149,5 @@ void momentumFunct(){
   m = validateDouble(m);
   cout << "\nplease enter a value for velocity (in m/s): ";
   v = validateDouble(v);
-  cout << "\nthe momentum, with m = " << m << "kg and v = " << v << "m/s, is =" << p << "kg*m/s";
+  cout << "\nthe momentum, with m = " << m << "kg and v = " << v << "m/s, is =" << fixed << setprecision(4) <<color<< p << "kg*m/s"<<reset;
 }

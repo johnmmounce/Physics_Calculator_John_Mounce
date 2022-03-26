@@ -17,6 +17,7 @@ int main() {
     cout << "4. Newton's 2nd law (force)"<< endl;
     cout << "5. Weight"<< endl;
     cout << "6. Momentum"<< endl;
+    cout << "enter 'C' or 'c' to clear screen" << endl;
     cout << "enter 'E' or 'e' to exit." << endl;
     input = validateChar(input);
     if (input == '1'){
@@ -36,6 +37,9 @@ int main() {
     }
     else if (input == '6'){
       momentumFunct();
+    }
+    else if (input == 'C' || input == 'c') {
+      system("clear");
     }
     else if (input == 'E' || input == 'e'){
       break;
